@@ -1,1 +1,184 @@
-// Styles
+
+:root {
+    /* Fondos */
+    --bg-main: #EBEAE6;        /* El tono arena/crema de fondo de la imagen */
+    --bg-card-light: #F2F1EE;  /* Un blanco roto muy sutil */
+    --bg-stone: #D6D5D1;       /* Gris piedra cálido */
+    
+    /* Textos */
+    --text-header: #1D1D1F;    /* Negro Apple casi puro */
+    --text-body: #424245;      /* Gris muy oscuro para lectura */
+    --text-muted: #86868B;     /* Gris para subtítulos */
+    
+    /* Acentos */
+    --apple-link: #0066CC;
+    --accent-vivid: #D62828;   /* Rojo Bravo para botones si es necesario */
+}
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+body {
+    background-color: #EBEAE6;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+    color: var(--text-header);
+}
+
+/* Nav Blur */
+.global-nav {
+    position: fixed; top: 0; width: 100%; height: 48px;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    z-index: 9999; display: flex; align-items: center;
+}
+
+.nav-content { width: 100%; max-width: 1024px; margin: 0 auto; display: flex; justify-content: space-between; padding: 0 22px; }
+
+.logo { font-weight: 600; font-size: 19px; letter-spacing: -0.5px; }
+
+.btn-buy { background: #0071E3; color: white; border: none; padding: 4px 12px; border-radius: 980px; font-size: 12px; cursor: pointer; }
+
+/* Chapter Nav */
+.chapter-nav { margin-top: 48px; background: #fff; padding: 15px 0; border-bottom: 1px solid #d2d2d7; }
+.chapter-list { display: flex; justify-content: center; list-style: none; gap: 40px; }
+.chapter-item a { text-decoration: none; color: var(--text-header); text-align: center; }
+.icon-circle { font-size: 24px; margin-bottom: 5px; opacity: 0.8; }
+.chapter-label { font-size: 11px; display: block; }
+.chapter-badge { font-size: 9px; color: #bf4800; display: block; }
+
+/* Hero */
+.hero { background-color: var(--bg-apple); padding: 80px 20px; text-align: center; }
+.headline-xl { font-size: 56px; font-weight: 700; letter-spacing: -0.005em; }
+.subheadline { font-size: 28px; font-weight: 400; margin-top: 10px; color: var(--text-header); }
+
+/* Grid */
+.product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px; }
+.card { height: 550px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; text-align: center; }
+.card-stone { background-color: var(--bg-stone); }
+.card-dark { background-color: #000; color: #fff; }
+
+.product-label { font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px; }
+.body-copy { font-size: 19px; color: var(--text-body); }
+.card-dark .body-copy { color: #a1a1a6; }
+
+/* Botones */
+.cta-button { color: var(--apple-link); text-decoration: none; font-size: 19px; margin: 0 10px; }
+.cta-button:hover { text-decoration: underline; }
+.cta-button::after { content: " >"; }
+
+.hero-image img { max-width: 850px; width: 100%; margin-top: 40px; border-radius: 18px; }
+
+footer {
+    padding: 40px;
+    background-color: var(--bg-main);
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* --- GRID DE PRODUCTOS EXTENDIDO (4 COLUMNAS) --- */
+.product-grid {
+    display: grid;
+    /* Crea 4 columnas de igual tamaño */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 12px;
+    padding: 12px;
+    background-color: var(--white);
+}
+
+.card {
+    /* Ajustamos la altura a 400px para que la cuadrícula 4x4 sea cómoda de ver */
+    height: 400px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02); /* Efecto sutil al pasar el mouse */
+}
+
+/* Variaciones de color para la cuadrícula */
+.card-stone { background-color: var(--bg-stone); }
+.card-light { background-color: var(--bg-apple); }
+.card-dark { background-color: #000; color: #fff; }
+
+/* Ajuste de tipografía para cuadrícula densa */
+.product-label {
+    font-size: 12px; /* Un poco más pequeña para que quepa bien en 4 columnas */
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.body-copy {
+    font-size: 16px;
+    color: var(--text-body);
+}
+
+/* Responsividad: Si la pantalla es pequeña (móvil), baja a 2 columnas o 1 */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- SECCIÓN SOPORTE (PRE-FOOTER) --- */
+.support-nav {
+    background-color: var(--bg-card-light); /* Un tono ligeramente distinto al fondo */
+    padding: 100px 22px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+
+.support-content {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    gap: 40px;
+}
+
+.support-column h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-header);
+}
+
+.support-column p {
+    font-size: 14px;
+    color: var(--text-body);
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.support-link {
+    font-size: 14px;
+    color: var(--apple-link);
+    text-decoration: none;
+}
+
+.support-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsivo para tablets y móviles */
+@media (max-width: 768px) {
+    .support-content {
+        grid-template-columns: 1fr; /* Se apilan en móvil */
+        text-align: center;
+    }
+}
