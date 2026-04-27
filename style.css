@@ -3,57 +3,50 @@ body {
 }
 
 /* AXEL */
-/* Navbar principal */
+/* Configuración de la Navbar */
 .custom-navbar {
-    border-bottom: none;
-    transition: background 0.3s ease;
+    background-color: #ffffff !important;
+    border-bottom: none !important; /* Elimina cualquier borde inferior */
+    box-shadow: none !important;    /* Elimina sombras para un look plano */
+    height: 70px;
 }
 
+/* Estilo del texto del logo */
+.logo-text {
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+/* Enlaces de navegación (Hombre, Mujer) */
 .custom-navbar .nav-link {
-    color: #1d1d1f !important; /* Gris oscuro estilo Apple */
+    color: #1d1d1f !important; /* Color negro/gris muy oscuro */
     font-size: 14px;
     font-weight: 400;
+    transition: opacity 0.2s ease;
 }
 
-/* Estilo del Mega Menu */
-.megamenu {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100%;
-    margin-top: 0;
-    border-radius: 0;
-    background-color: #ffffff;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.2s ease-in-out;
-    display: block; /* Necesario para la transición manual */
+.custom-navbar .nav-link:hover {
+    opacity: 0.6; /* Efecto sutil al pasar el mouse */
 }
 
-/* Efecto Hover para desplegar */
-.nav-item.dropdown:hover .megamenu {
-    opacity: 1;
-    visibility: visible;
+/* Tamaño de los íconos */
+.bi {
+    font-size: 1.1rem;
+    -webkit-text-stroke: 0.5px; /* Hace los íconos un poco más finos */
 }
 
-.dropdown-item {
-    font-size: 13px;
-    color: #86868b; /* Gris claro para subcategorías */
-    padding: 5px 0;
+/* Ajuste para dispositivos móviles */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        background-color: white;
+        padding: 20px;
+        text-align: center;
+    }
 }
+/* AXEL */
 
-.dropdown-item:hover {
-    background: transparent;
-    color: #0066cc; /* Azul sutil al pasar el mouse */
-}
-
-.fw-bold {
-    font-size: 14px;
-    margin-bottom: 10px;
-    display: block;
-}
-
-/*mini carrucel*/
 /*contenedor principal*/
 .chapter-content{
     max-width: 100%;
@@ -94,6 +87,21 @@ body {
     transform: scale(1.1); 
 }
 
+/* AXEL */
+/* Estilos para el Footer */
+.footer-aura {
+    background-color: #ffffff; /* Fondo blanco */
+    border-top: 1px solid #d2d2d7; /* Línea horizontal gris sutil */
+}
+
+.copyright-text {
+    color: #86868b; /* Gris suave estilo Apple */
+    font-size: 14px; /* Tamaño de letra discreto */
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+/* AXEL */
+
 /*Stock de tenis*/
 .product-card {
     background-color: #ffffff;
@@ -103,28 +111,32 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
                 box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     cursor: pointer;
 }
 
+
 .product-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
 }
+
 
 .product-image-wrapper {
     margin-bottom: 15px;
-    background-color: #f9f9f9; 
+    background-color: #f9f9f9;
     border-radius: 4px;
     overflow: hidden;
 }
+
 
 .product-image-wrapper img {
     width: 100%;
     height: auto;
     object-fit: contain;
 }
+
 
 .product-title {
     font-size: 1.1rem;
@@ -133,33 +145,34 @@ body {
     margin-bottom: 8px;
 }
 
+
 .product-price {
     font-size: 1rem;
-    color: #5a8ca5; 
+    color: #5a8ca5;
     font-weight: 600;
     margin-bottom: 15px;
 }
-
-
 .product-specs {
     list-style: none;
     padding: 0;
     margin: 0 0 20px 0;
     font-size: 0.85rem;
     color: #777;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
 
+
 .product-specs li::before {
-    content: "•"; 
+    content: "•";
     color: #ccc;
-    display: inline-block; 
+    display: inline-block;
     width: 1em;
     margin-left: -1em;
 }
 
+
 .btn-select {
-    background-color: #8eb2c5; 
+    background-color: #8eb2c5;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -169,22 +182,21 @@ body {
     text-transform: uppercase;
     transition: background-color 0.3s ease;
 }
-
 .btn-select:hover {
-    background-color: #7a9eb0; 
+    background-color: #7a9eb0;
 }
 
-/* wish*/
+    /* wish*/
 .btn-wishlist {
     background: transparent;
     border: none;
     color: #333;
     font-size: 1.2rem;
-    float: left; 
+    float: left;
     padding: 0;
 }
 .product-image-wrapper {
-    aspect-ratio: 1 / 1; 
+    aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
     justify-content: center;
