@@ -5,9 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aura Sport | Estética en Movimiento</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <!-- Íconos de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Bootstrap Estilo -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
+</head>
+
+<body>
+    <!-- NAV BAR AXEL -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top custom-navbar">
+        <div class="container-fluid px-4">
+            <!-- ícono y nombre en lado izquierdo -->
+            <a class="navbar-brand" href="#"> <!-- Referenciar al home -->
+                <!-- ícono de rayo CAMBIAR POR EL ÍCONO DE LA MARCA! -->
+                <i class="bi bi-lightning-charge-fill"></i>
+                <!-- Nombre de la marca -->
+                <span class="fw-bold">AURA</span>
+            </a>
+
+            <!--
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            -->
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item dropdown has-megamenu">
+                        <a class="nav-link px-3" href="#" id="navbarDropdownHombre" role="button" data-bs-toggle="dropdown">
+                            Hombre
+                        </a>
+                        <div class="dropdown-menu megamenu w-100 border-0 shadow-sm" aria-labelledby="navbarDropdownHombre">
+                            <div class="container py-4">
+                                <div class="row text-center">
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold">Rendimiento</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="#">Tenis para Correr</a></li>
+                                            <li><a class="dropdown-item" href="#">Trail Running</a></li>
+                                            <li><a class="dropdown-item" href="#">Entrenamiento / Gym</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold">Lifestyle</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="#">Urbanos Clásicos</a></li>
+                                            <li><a class="dropdown-item" href="#">Tenis para Caminar</a></li>
+                                            <li><a class="dropdown-item" href="#">Skateboarding</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold">Colecciones</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="#">Ediciones Especiales</a></li>
+                                            <li><a class="dropdown-item" href="#">Eco-Friendly</a></li>
+                                            <li><a class="dropdown-item" href="#">Nuevos Lanzamientos</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=300&q=80" class="img-fluid rounded" alt="Promo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown has-megamenu">
+                        <a class="nav-link px-3" href="#" id="navbarDropdownMujer" role="button" data-bs-toggle="dropdown">
+                            Mujer
+                        </a>
+                        <div class="dropdown-menu megamenu w-100 border-0 shadow-sm" aria-labelledby="navbarDropdownMujer">
+                            <div class="container py-4">
+                                <div class="row text-center">
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold">Deporte</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="#">Tenis para Correr</a></li>
+                                            <li><a class="dropdown-item" href="#">Yoga & Comfort</a></li>
+                                            <li><a class="dropdown-item" href="#">Caminata Ligera</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold">Estilo</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="#">Plataformas</a></li>
+                                            <li><a class="dropdown-item" href="#">Urbanos Minimalistas</a></li>
+                                            <li><a class="dropdown-item" href="#">Moda Retro</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold">Especiales</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="#">Serie Performance</a></li>
+                                            <li><a class="dropdown-item" href="#">Colaboraciones</a></li>
+                                            <li><a class="dropdown-item" href="#">Ofertas</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=300&q=80" class="img-fluid rounded" alt="Promo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- ícono de lupa -->
+                    <li class="nav-item px-2"><a class="nav-link" href="#"><i class="bi bi-search"></i></a></li>
+                    <!-- ícono de corazón -->
+                    <li class="nav-item px-2"><a class="nav-link" href="#"><i class="bi bi-heart"></i></a></li>
+                    <!-- ícono de carrito -->
+                    <li class="nav-item px-2"><a class="nav-link" href="#"><i class="bi bi-cart3"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Nav bar inicial -->
+    <!--
     <nav class="global-nav">
         <div class="nav-content">
             <span class="logo">AURA</span>
@@ -20,6 +134,7 @@
             </div>
         </div>
     </nav>
+    -->
 <!--Mini carrusel-->
     <nav class="chapter-nav">
         <div class="chapter-content">
@@ -73,6 +188,98 @@
                 <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1000" alt="Colección Aura">
             </div>
         </section>
+<!--regillas de stock-->
+<section class="container my-5">
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
+        
+        <div class="col">
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="Stock/1.jpg" alt="Tenis 1" class="img-fluid">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Cloudsolo Arena</h3>
+                    <p class="product-price">2,800.00 MXN</p>
+                    <ul class="product-specs">
+                        <li>Tecnología CloudTec</li>
+                        <li>Diseño liviano</li>
+                    </ul>
+                    <button class="btn-select">SELECT OPTIONS</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="Stock/2.jpg" alt="Tenis 2" class="img-fluid">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Cloudsolo Blanco</h3>
+                    <p class="product-price">2,500.00 MXN</p>
+                    <ul class="product-specs">
+                        <li>Suela de goma</li>
+                        <li>Transpirable</li>
+                    </ul>
+                    <button class="btn-select">SELECT OPTIONS</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="Stock/3.jpg" alt="Tenis 3" class="img-fluid">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Cloudsolo Negro</h3>
+                    <p class="product-price">2,800.00 MXN</p>
+                    <ul class="product-specs">
+                        <li>Amortiguación Pro</li>
+                        <li>Estilo Urbano</li>
+                    </ul>
+                    <button class="btn-select">SELECT OPTIONS</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="Stock/4.jpg" alt="Tenis 4" class="img-fluid">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Cloudsolo Gris</h3>
+                    <p class="product-price">2,650.00 MXN</p>
+                    <ul class="product-specs">
+                        <li>Tela técnica</li>
+                        <li>Ajuste perfecto</li>
+                    </ul>
+                    <button class="btn-select">SELECT OPTIONS</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="Stock/5.jpg" alt="Tenis 5" class="img-fluid">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Cloudsolo Especial</h3>
+                    <p class="product-price">3,200.00 MXN</p>
+                    <ul class="product-specs">
+                        <li>Edición Limitada</li>
+                        <li>Premium Materials</li>
+                    </ul>
+                    <button class="btn-select">SELECT OPTIONS</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 
         <section class="product-grid">
             <div class="card card-dark">
@@ -98,5 +305,7 @@
         </div>
     </footer>
 
+    <!-- Script bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
