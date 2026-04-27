@@ -3,55 +3,49 @@ body {
 }
 
 /* AXEL */
-/* Navbar principal */
+/* Configuración de la Navbar */
 .custom-navbar {
-    border-bottom: none;
-    transition: background 0.3s ease;
+    background-color: #ffffff !important;
+    border-bottom: none !important; /* Elimina cualquier borde inferior */
+    box-shadow: none !important;    /* Elimina sombras para un look plano */
+    height: 70px;
 }
 
+/* Estilo del texto del logo */
+.logo-text {
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+/* Enlaces de navegación (Hombre, Mujer) */
 .custom-navbar .nav-link {
-    color: #1d1d1f !important; /* Gris oscuro estilo Apple */
+    color: #1d1d1f !important; /* Color negro/gris muy oscuro */
     font-size: 14px;
     font-weight: 400;
+    transition: opacity 0.2s ease;
 }
 
-/* Estilo del Mega Menu */
-.megamenu {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100%;
-    margin-top: 0;
-    border-radius: 0;
-    background-color: #ffffff;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.2s ease-in-out;
-    display: block; /* Necesario para la transición manual */
+.custom-navbar .nav-link:hover {
+    opacity: 0.6; /* Efecto sutil al pasar el mouse */
 }
 
-/* Efecto Hover para desplegar */
-.nav-item.dropdown:hover .megamenu {
-    opacity: 1;
-    visibility: visible;
+/* Tamaño de los íconos */
+.bi {
+    font-size: 1.1rem;
+    -webkit-text-stroke: 0.5px; /* Hace los íconos un poco más finos */
 }
 
-.dropdown-item {
-    font-size: 13px;
-    color: #86868b; /* Gris claro para subcategorías */
-    padding: 5px 0;
+/* Ajuste para dispositivos móviles */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        background-color: white;
+        padding: 20px;
+        text-align: center;
+    }
 }
-
-.dropdown-item:hover {
-    background: transparent;
-    color: #0066cc; /* Azul sutil al pasar el mouse */
-}
-
-.fw-bold {
-    font-size: 14px;
-    margin-bottom: 10px;
-    display: block;
-}
+/* AXEL */
 
 /*contenedor principal*/
 .chapter-content{

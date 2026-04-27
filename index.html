@@ -15,126 +15,41 @@
 <body>
     <!-- NAV BAR AXEL -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top custom-navbar">
-        <div class="container-fluid px-4">
-            <!-- ícono y nombre en lado izquierdo -->
-            <a class="navbar-brand" href="#"> <!-- Referenciar al home -->
-                <!-- ícono de rayo CAMBIAR POR EL ÍCONO DE LA MARCA! -->
-                <i class="bi bi-lightning-charge-fill"></i>
-                <!-- Nombre de la marca -->
-                <span class="fw-bold">AURA</span>
+        <div class="container px-4">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <span class="logo-text">AURA</span>
             </a>
 
-            <!--
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            -->
-
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navPrincipal">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item dropdown has-megamenu">
-                        <a class="nav-link px-3" href="#" id="navbarDropdownHombre" role="button" data-bs-toggle="dropdown">
-                            Hombre
-                        </a>
-                        <div class="dropdown-menu megamenu w-100 border-0 shadow-sm" aria-labelledby="navbarDropdownHombre">
-                            <div class="container py-4">
-                                <div class="row text-center">
-                                    <div class="col-md-3">
-                                        <h6 class="fw-bold">Rendimiento</h6>
-                                        <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Tenis para Correr</a></li>
-                                            <li><a class="dropdown-item" href="#">Trail Running</a></li>
-                                            <li><a class="dropdown-item" href="#">Entrenamiento / Gym</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h6 class="fw-bold">Lifestyle</h6>
-                                        <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Urbanos Clásicos</a></li>
-                                            <li><a class="dropdown-item" href="#">Tenis para Caminar</a></li>
-                                            <li><a class="dropdown-item" href="#">Skateboarding</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h6 class="fw-bold">Colecciones</h6>
-                                        <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Ediciones Especiales</a></li>
-                                            <li><a class="dropdown-item" href="#">Eco-Friendly</a></li>
-                                            <li><a class="dropdown-item" href="#">Nuevos Lanzamientos</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=300&q=80" class="img-fluid rounded" alt="Promo">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="#">Hombre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="#">Mujer</a>
                     </li>
 
-                    <li class="nav-item dropdown has-megamenu">
-                        <a class="nav-link px-3" href="#" id="navbarDropdownMujer" role="button" data-bs-toggle="dropdown">
-                            Mujer
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link px-2" href="#" title="Buscar">
+                            <i class="bi bi-search"></i>
                         </a>
-                        <div class="dropdown-menu megamenu w-100 border-0 shadow-sm" aria-labelledby="navbarDropdownMujer">
-                            <div class="container py-4">
-                                <div class="row text-center">
-                                    <div class="col-md-3">
-                                        <h6 class="fw-bold">Deporte</h6>
-                                        <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Tenis para Correr</a></li>
-                                            <li><a class="dropdown-item" href="#">Yoga & Comfort</a></li>
-                                            <li><a class="dropdown-item" href="#">Caminata Ligera</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h6 class="fw-bold">Estilo</h6>
-                                        <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Plataformas</a></li>
-                                            <li><a class="dropdown-item" href="#">Urbanos Minimalistas</a></li>
-                                            <li><a class="dropdown-item" href="#">Moda Retro</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h6 class="fw-bold">Especiales</h6>
-                                        <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Serie Performance</a></li>
-                                            <li><a class="dropdown-item" href="#">Colaboraciones</a></li>
-                                            <li><a class="dropdown-item" href="#">Ofertas</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=300&q=80" class="img-fluid rounded" alt="Promo">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </li>
-
-                    <!-- ícono de lupa -->
-                    <li class="nav-item px-2"><a class="nav-link" href="#"><i class="bi bi-search"></i></a></li>
-                    <!-- ícono de corazón -->
-                    <li class="nav-item px-2"><a class="nav-link" href="#"><i class="bi bi-heart"></i></a></li>
-                    <!-- ícono de carrito -->
-                    <li class="nav-item px-2"><a class="nav-link" href="#"><i class="bi bi-cart3"></i></a></li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2" href="#" title="Favoritos">
+                            <i class="bi bi-heart"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2" href="#" title="Carrito">
+                            <i class="bi bi-bag"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Nav bar inicial -->
-    <!--
-    <nav class="global-nav">
-        <div class="nav-content">
-            <span class="logo">AURA</span>
-            <div class="nav-links">
-                <a href="#">Tienda</a>
-                <a href="#">Mujer</a>
-                <a href="#">Hombre</a>
-                <a href="#">Accesorios</a>
-                <button class="btn-buy">Comprar</button>
-            </div>
-        </div>
-    </nav>
-    -->
+    <!-- NAVBAR AXEL -->
+
 <!--Mini carrusel-->
     <nav class="chapter-nav">
         <div class="chapter-content">
