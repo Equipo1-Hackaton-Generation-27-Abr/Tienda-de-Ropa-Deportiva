@@ -47,6 +47,12 @@ body {
     align-items: center;
 }
 
+.nav-logo {
+    height: 40px; /* Ajusta este valor hasta que se vea como quieres */
+    width: auto;   /* Esto asegura que el ancho sea proporcional */
+    margin-right: 10px; /* Espacio opcional entre el logo y el texto */
+}
+
 .logo-text {
     font-weight: 600;
     letter-spacing: -0.5px;
