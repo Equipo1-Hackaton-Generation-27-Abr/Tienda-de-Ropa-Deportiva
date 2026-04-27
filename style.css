@@ -234,12 +234,13 @@ body {
 
 /*video centro*/
 .hero-video-container {
+    position: relative; /* 🔥 clave para overlay */
     width: 100%;
     max-width: 1000px; 
     margin: 40px auto; 
     padding: 0 15px;
-    text-align: center; 
 }
+
 .hero-video {
     width: 100%;
     height: auto;
@@ -248,30 +249,48 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
     object-fit: cover;
 }
+
+/* 🔥 overlay */
 .video-overlay-text {
-    padding-top: 25px;
+    position: absolute;
+    bottom: 6%; 
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    width: 80%;
+    padding: 15px;
+    backdrop-filter: none;
 }
+
 .video-overlay-text h1 {
     font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: -1px; 
     margin-bottom: 10px;
-    color: #1d1d1f; 
+    color: #ffffff;
 }
 
 .video-overlay-text p {
-    font-size: 1.1rem;
-    color: #6e6e73;
+    font-size: 2.1rem;
+    color: #ffffff;
     margin-bottom: 20px;
 }
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
 .btn-link {
     font-size: 1.1rem;
-    color: #0066cc; /* Azul clásico de enlaces premium */
+    color: #ffffff;
     text-decoration: none;
     font-weight: 500;
-    margin: 0 15px;
     transition: color 0.2s ease;
 }
+
 .btn-link:hover {
     color: #004499;
     text-decoration: underline;
