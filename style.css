@@ -1,110 +1,154 @@
+:root {
+    /* Fondos VORA (Basados en tu imagen) */
+    --bg-main: #EBEAE6;        /* Tono arena/crema principal */
+    --bg-card-light: #F2F1EE;  /* Blanco roto */
+    --bg-stone: #D6D5D1;       /* Gris piedra cálido */
+    --bg-white: #FFFFFF;
+    
+    /* Textos Estilo Apple/Axel */
+    --text-header: #1D1D1F;    /* Negro Apple */
+    --text-body: #424245;      /* Gris oscuro */
+    --text-muted: #86868B;     /* Gris suave (Copyright) */
+    
+    /* Acentos */
+    --apple-link: #0066CC;
+    --btn-blue: #0071E3;
+    --btn-select: #8eb2c5;     /* Color azul suave Axel */
+}
+
+/* --- RESET & BASE --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    -webkit-font-smoothing: antialiased; 
+}
+
 body {
-    padding-top: 90px; /* Para que el contenido no quede oculto bajo la navbar fija */
+    background-color: var(--bg-main); /* Fondo orgánico unificado */
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+    color: var(--text-header);
+    padding-top: 90px; /* Espacio para la navbar fija de Axel */
+    overflow-x: hidden;
 }
 
-/* AXEL */
-/* Configuración de la Navbar */
+/* --- NAVBAR (ESTILO AXEL + BLUR VORA) --- */
 .custom-navbar {
-    background-color: #ffffff !important;
-    border-bottom: none !important; /* Elimina cualquier borde inferior */
-    box-shadow: none !important;    /* Elimina sombras para un look plano */
+    position: fixed;
+    top: 0;
+    width: 100%;
     height: 70px;
+     /*background-color: rgba(255, 255, 255, 0.8) !important; /* Blanco con transparencia */
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: none !important;
+    box-shadow: none !important;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
 }
 
-/* Estilo del texto del logo */
 .logo-text {
     font-weight: 600;
     letter-spacing: -0.5px;
     font-size: 1.2rem;
     color: #000;
+    text-decoration: none;
 }
 
-/* Enlaces de navegación (Hombre, Mujer) */
 .custom-navbar .nav-link {
-    color: #1d1d1f !important; /* Color negro/gris muy oscuro */
+    color: var(--text-header) !important;
     font-size: 14px;
     font-weight: 400;
     transition: opacity 0.2s ease;
+    margin: 0 10px;
+    text-decoration: none;
 }
 
 .custom-navbar .nav-link:hover {
-    opacity: 0.6; /* Efecto sutil al pasar el mouse */
+    opacity: 0.6;
 }
 
-/* Tamaño de los íconos */
+/* Iconos de la Navbar */
 .bi {
     font-size: 1.1rem;
-    -webkit-text-stroke: 0.5px; /* Hace los íconos un poco más finos */
+    -webkit-text-stroke: 0.5px;
 }
 
-/* Ajuste para dispositivos móviles */
-@media (max-width: 991.98px) {
-    .navbar-nav {
-        background-color: white;
-        padding: 20px;
-        text-align: center;
-    }
+/* --- CHAPTER NAV (CARRUSEL) --- */
+.chapter-nav {
+    background: var(--bg-white);
+    border-bottom: 1px solid #d2d2d7;
+    padding: 10px 0;
 }
-/* AXEL */
 
-/*contenedor principal*/
-.chapter-content{
+.chapter-content {
     max-width: 100%;
     overflow-x: auto;
-    scrollbar-width: none;
+    scrollbar-width: none; /* Firefox */
     display: flex;
     justify-content: center;
 }
-.chapter-content::-webkit-scrollbar{
-    display: none;
-}
-/*transformacion a carrucel*/
-.chapter-list{
+
+.chapter-content::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+.chapter-list {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     padding: 10px 20px;
     list-style: none;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
 }
-/*caracterizacion de los items*/
-.chapter-item{
+
+.chapter-item {
     flex: 0 0 auto;
     scroll-snap-align: center;
     text-align: center;
-    width: 80px;
+    width: 90px;
 }
-/*desing item*/
-.icon-placeholder{
+
+.chapter-item a { text-decoration: none; color: var(--text-header); }
+
+.icon-placeholder, .icon-circle {
     width: 60px;
     height: 60px;
-    background: #f0f0f0;
+    background: var(--bg-card-light);
     border-radius: 50%;
-    margin-bottom: 8px;
-    transition: transform 0.2 ease;
-}
-.chapter-item:hover .icon-placeholder {
-    transform: scale(1.1); 
-}
-
-/* AXEL */
-/* Estilos para el Footer */
-.footer-aura {
-    background-color: #ffffff; /* Fondo blanco */
-    border-top: 1px solid #d2d2d7; /* Línea horizontal gris sutil */
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: transform 0.2s ease;
 }
 
-.copyright-text {
-    color: #86868b; /* Gris suave estilo Apple */
-    font-size: 14px; /* Tamaño de letra discreto */
-    font-weight: 400;
-    letter-spacing: 0.01em;
+.chapter-item:hover .icon-placeholder,
+.chapter-item:hover .icon-circle {
+    transform: scale(1.1);
 }
-/* AXEL */
 
-/*Stock de tenis*/
+.chapter-label { font-size: 11px; font-weight: 400; }
+
+/* --- HERO --- */
+.hero {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: var(--bg-main);
+}
+
+.headline-xl { font-size: 56px; font-weight: 700; letter-spacing: -0.015em; }
+.subheadline { font-size: 24px; color: var(--text-body); margin: 10px 0 30px; }
+
+/* --- PRODUCT GRID & CARDS (STOCK DE TENIS) --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 15px;
+    background-color: var(--bg-main);
+}
+
 .product-card {
-    background-color: #ffffff;
+    background-color: var(--bg-white);
     border: none;
     padding: 20px;
     text-align: center;
@@ -116,20 +160,21 @@ body {
     cursor: pointer;
 }
 
-
 .product-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
 }
 
-
 .product-image-wrapper {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 15px;
     background-color: #f9f9f9;
     border-radius: 4px;
     overflow: hidden;
 }
-
 
 .product-image-wrapper img {
     width: 100%;
@@ -137,42 +182,11 @@ body {
     object-fit: contain;
 }
 
-
-.product-title {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 8px;
-}
-
-
-.product-price {
-    font-size: 1rem;
-    color: #5a8ca5;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-.product-specs {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-    font-size: 0.85rem;
-    color: #777;
-    flex-grow: 1;
-}
-
-
-.product-specs li::before {
-    content: "•";
-    color: #ccc;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-}
-
+.product-title { font-size: 1.1rem; font-weight: 500; color: #333; margin-bottom: 8px; }
+.product-price { font-size: 1rem; color: #5a8ca5; font-weight: 600; margin-bottom: 15px; }
 
 .btn-select {
-    background-color: #8eb2c5;
+    background-color: var(--btn-select);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -180,24 +194,34 @@ body {
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
-.btn-select:hover {
-    background-color: #7a9eb0;
+
+.btn-select:hover { background-color: #7a9eb0; }
+
+/* --- FOOTER AURA (AXEL) --- */
+.footer-aura {
+    background-color: var(--bg-white);
+    border-top: 1px solid #d2d2d7;
+    padding: 40px 20px;
+    text-align: center;
 }
 
-    /* wish*/
-.btn-wishlist {
-    background: transparent;
-    border: none;
-    color: #333;
-    font-size: 1.2rem;
-    float: left;
-    padding: 0;
+.copyright-text {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
 }
-.product-image-wrapper {
-    aspect-ratio: 1 / 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 991.98px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .navbar-nav { background-color: white; padding: 20px; text-align: center; }
+}
+
+@media (max-width: 600px) {
+    .product-grid { grid-template-columns: 1fr; }
+    .headline-xl { font-size: 38px; }
 }
