@@ -1,5 +1,57 @@
+body {
+    padding-top: 90px; /* Para que el contenido no quede oculto bajo la navbar fija */
+}
 
+/* AXEL */
+/* Navbar principal */
+.custom-navbar {
+    border-bottom: none;
+    transition: background 0.3s ease;
+}
 
+.custom-navbar .nav-link {
+    color: #1d1d1f !important; /* Gris oscuro estilo Apple */
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Estilo del Mega Menu */
+.megamenu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin-top: 0;
+    border-radius: 0;
+    background-color: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+    display: block; /* Necesario para la transición manual */
+}
+
+/* Efecto Hover para desplegar */
+.nav-item.dropdown:hover .megamenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-item {
+    font-size: 13px;
+    color: #86868b; /* Gris claro para subcategorías */
+    padding: 5px 0;
+}
+
+.dropdown-item:hover {
+    background: transparent;
+    color: #0066cc; /* Azul sutil al pasar el mouse */
+}
+
+.fw-bold {
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: block;
+}
 
 /*contenedor principal*/
 .chapter-content{
