@@ -86,3 +86,18 @@ body {
 .chapter-item:hover .icon-placeholder {
     transform: scale(1.1); 
 }
+
+/* AXEL */
+/* Estilos para el Footer */
+.footer-aura {
+    background-color: #ffffff; /* Fondo blanco */
+    border-top: 1px solid #d2d2d7; /* Línea horizontal gris sutil */
+}
+
+.copyright-text {
+    color: #86868b; /* Gris suave estilo Apple */
+    font-size: 14px; /* Tamaño de letra discreto */
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+/* AXEL */
