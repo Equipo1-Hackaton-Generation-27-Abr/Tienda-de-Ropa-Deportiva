@@ -38,7 +38,7 @@ body {
     top: 0;
     width: 100%;
     height: 70px;
-    background-color: var(--bg-main);
+     /*background-color: rgba(255, 255, 255, 0.8) !important; /* Blanco con transparencia */
     backdrop-filter: saturate(180%) blur(20px);
     border-bottom: none !important;
     box-shadow: none !important;
@@ -202,7 +202,8 @@ body {
 
 /* --- FOOTER AURA (AXEL) --- */
 .footer-aura {
-    background-color: var(--bg-main);
+    background-color: var(--bg-white);
+    border-top: 1px solid #d2d2d7;
     padding: 40px 20px;
     text-align: center;
 }
@@ -223,4 +224,30 @@ body {
 @media (max-width: 600px) {
     .product-grid { grid-template-columns: 1fr; }
     .headline-xl { font-size: 38px; }
+}
+
+/*video centro*/
+.hero-video-container {
+    width: 100%;
+    max-width: 600px; /* Ajusta este ancho para que coincida con tu diseño */
+    margin: 0 auto;   /* Lo centra si es necesario */
+}
+
+.hero-video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Opcional: le da un toque moderno con esquinas redondeadas */
+    display: block;
+}
+
+.video-overlay-text h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+}
+
+.video-overlay-text p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
 }
