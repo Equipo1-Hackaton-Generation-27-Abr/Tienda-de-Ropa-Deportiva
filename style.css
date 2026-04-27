@@ -229,25 +229,44 @@ body {
 /*video centro*/
 .hero-video-container {
     width: 100%;
-    max-width: 600px; /* Ajusta este ancho para que coincida con tu diseño */
-    margin: 0 auto;   /* Lo centra si es necesario */
+    max-width: 1000px; 
+    margin: 40px auto; 
+    padding: 0 15px;
+    text-align: center; 
 }
-
 .hero-video {
     width: 100%;
     height: auto;
-    border-radius: 8px; /* Opcional: le da un toque moderno con esquinas redondeadas */
     display: block;
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    object-fit: cover;
 }
-
+.video-overlay-text {
+    padding-top: 25px;
+}
 .video-overlay-text h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-top: 1.5rem;
+    letter-spacing: -1px; 
+    margin-bottom: 10px;
+    color: #1d1d1f; 
 }
 
 .video-overlay-text p {
     font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 1rem;
+    color: #6e6e73;
+    margin-bottom: 20px;
+}
+.btn-link {
+    font-size: 1.1rem;
+    color: #0066cc; /* Azul clásico de enlaces premium */
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 15px;
+    transition: color 0.2s ease;
+}
+.btn-link:hover {
+    color: #004499;
+    text-decoration: underline;
 }
