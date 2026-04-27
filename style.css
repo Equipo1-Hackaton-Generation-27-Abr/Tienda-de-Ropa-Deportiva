@@ -1,1 +1,42 @@
-// Styles
+
+
+
+/*contenedor principal*/
+.chapter-content{
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    display: flex;
+    justify-content: center;
+}
+.chapter-content::-webkit-scrollbar{
+    display: none;
+}
+/*transformacion a carrucel*/
+.chapter-list{
+    display: flex;
+    gap: 20px;
+    padding: 10px 20px;
+    list-style: none;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+/*caracterizacion de los items*/
+.chapter-item{
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    text-align: center;
+    width: 80px;
+}
+/*desing item*/
+.icon-placeholder{
+    width: 60px;
+    height: 60px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    transition: transform 0.2 ease;
+}
+.chapter-item:hover .icon-placeholder {
+    transform: scale(1.1); 
+}
