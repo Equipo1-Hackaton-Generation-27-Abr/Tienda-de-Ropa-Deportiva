@@ -145,6 +145,7 @@ body {
 .subheadline { font-size: 24px; color: var(--text-body); margin: 10px 0 30px; }
 
 /* --- PRODUCT GRID & CARDS (STOCK DE TENIS) --- */
+/* 1. Mantenemos tu grid pero lo hacemos flexible */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -153,6 +154,7 @@ body {
     background-color: var(--bg-main);
 }
 
+/* 2. Tu card con el efecto de elevación intacto */
 .product-card {
     background-color: var(--bg-white);
     border: none;
@@ -164,13 +166,15 @@ body {
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
                 box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     cursor: pointer;
+    position: relative;
 }
 
 .product-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); /* Sombra un poco más marcada para el hover */
 }
 
+/* 3. El contenedor de la imagen */
 .product-image-wrapper {
     aspect-ratio: 1 / 1;
     display: flex;
@@ -180,17 +184,44 @@ body {
     background-color: #f9f9f9;
     border-radius: 4px;
     overflow: hidden;
+    position: relative; /* Por si decides usar el método absolute después */
 }
 
-.product-image-wrapper img {
+/* 4. LA CLAVE: La imagen con transición de opacidad para el JS */
+.product-img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
+    transition: opacity 0.3s ease-in-out; /* Esta línea hace que el cambio de JS sea suave */
+    will-change: opacity;
 }
 
-.product-title { font-size: 1.1rem; font-weight: 500; color: #333; margin-bottom: 8px; }
-.product-price { font-size: 1rem; color: #5a8ca5; font-weight: 600; margin-bottom: 15px; }
+/* 5. Textos y precios */
+.product-title { 
+    font-size: 1.1rem; 
+    font-weight: 500; 
+    color: #333; 
+    margin-bottom: 8px; 
+}
 
+.product-price { 
+    font-size: 1rem; 
+    color: #5a8ca5; 
+    font-weight: 600; 
+    margin-bottom: 15px; 
+}
+
+/* 6. Lista de especificaciones (Opcional por si la usas) */
+.product-specs {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+    color: #777;
+    flex-grow: 1; /* Esto empuja el botón siempre al fondo de la card */
+}
+
+/* 7. El botón con tu variable de color */
 .btn-select {
     background-color: var(--btn-select);
     color: white;
@@ -201,10 +232,14 @@ body {
     letter-spacing: 1px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: auto; /* Asegura alineación aunque los textos varíen */
 }
 
-.btn-select:hover { background-color: #7a9eb0; }
+.btn-select:hover { 
+    background-color: #7a9eb0;
+    transform: scale(1.02); /* Pequeño feedback al pasar sobre el botón */
+}
 
 /* --- FOOTER AURA (AXEL) --- */
 .footer-aura {
@@ -292,5 +327,41 @@ body {
 }
 
 .btn-link:hover {
-    color: #cccccc;
+    color: #004499;
+    text-decoration: underline;
 }
+
+/* Sección envío y contacto */
+
+/* Color gris claro de fondo para la sección*/
+.services-section {
+    background-color: var(--bg-main);
+}
+
+/* Color de los íconos */
+.services-section .bi {
+    color: #1d1d1f;
+}
+
+/* Títulos y textos */
+.services-section h3 {
+    color: #1d1d1f;
+}
+
+.services-section p {
+    line-height: 1.5;
+    max-width: 280px; /* Limitamos el ancho del texto para que se vea centrado y ordenado */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo del enlace (Link) */
+.custom-link {
+    color: #0066cc;
+    font-size: 14px;
+}
+
+.custom-link:hover {
+    text-decoration: underline !important;
+}
+/* Sección envío y contacto*/
