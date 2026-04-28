@@ -513,3 +513,6 @@ body {
         overflow-x: auto;
     }
 }
+    .product-details-container { grid-template-columns: 1fr; padding: 20px; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+
