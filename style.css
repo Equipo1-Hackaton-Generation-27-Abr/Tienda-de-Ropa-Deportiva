@@ -125,58 +125,105 @@ body {
     flex-direction: column;
 }
 
-#detalle-titulo {
-    font-size: 2.2rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    margin-bottom: 10px;
+.headline-xl { font-size: 56px; font-weight: 700; letter-spacing: -0.015em; }
+.subheadline { font-size: 24px; color: var(--text-body); margin: 10px 0 30px; }
+
+/* --- PRODUCT GRID & CARDS (STOCK DE TENIS) --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 15px;
+    background-color: var(--bg-main);
 }
 
-#detalle-precio {
-    font-size: 1.4rem;
-    color: var(--accent-blue);
-    font-weight: 600;
-    margin-bottom: 25px;
+.product-card {
+    background-color: var(--bg-white);
+    border: none;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+    position: relative;
 }
 
-.specs-list {
-    list-style: none;
-    padding: 20px 0;
-    border-top: 1px solid #e5e5e5;
-    margin-bottom: 20px;
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); 
 }
 
-.specs-list li {
-    font-size: 14px;
-    color: var(--text-body);
-    margin-bottom: 10px;
+.product-image-wrapper {
+    aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative; 
 }
 
-.specs-list li::before {
-    content: "•";
-    color: var(--accent-blue);
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease-in-out; 
+    will-change: opacity;
+}
+
+.product-title { 
+    font-size: 1.1rem; 
+    font-weight: 500; 
+    color: #333; 
+    margin-bottom: 8px; 
+}
+
+.product-price { 
+    font-size: 1rem; 
+    color: #5a8ca5; 
+    font-weight: 600; 
+    margin-bottom: 15px; 
+}
+
+.product-specs {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+    color: #777;
+    flex-grow: 1; 
+}
+
+.btn-select {
+    background-color: var(--btn-select);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.8rem;
     font-weight: bold;
-    display: inline-block; 
-    width: 1em;
-}
-
-/* Selectores y Botones */
-.options-group label {
-    font-size: 12px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    font-weight: 600;
-    color: var(--text-muted);
-    margin-bottom: 5px;
-    display: block;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: auto; 
 }
 
-.form-select {
-    border-radius: 0;
-    border: 1px solid #d2d2d7;
-    font-size: 14px;
-    padding: 10px;
+.btn-select:hover { 
+    background-color: #7a9eb0;
+    transform: scale(1.02); 
+}
+
+/* --- FOOTER AURA (AXEL) --- */
+.footer-aura {
+    background-color: var(--bg-white);
+    border-top: 1px solid #d2d2d7;
+    padding: 40px 20px;
+    text-align: center;
 }
 
 .purchase-actions {
@@ -251,8 +298,42 @@ body {
 
 .copyright-text { color: var(--text-muted); font-size: 13px; }
 
-/* --- RESPONSIVIDAD --- */
-@media (max-width: 991px) {
-    .product-details-container { grid-template-columns: 1fr; padding: 20px; }
-    .product-grid { grid-template-columns: repeat(2, 1fr); }
+.btn-link:hover {
+    color: #004499;
+    text-decoration: underline;
 }
+
+/* Sección envío y contacto */
+
+/* Color gris claro de fondo para la sección*/
+.services-section {
+    background-color: var(--bg-main);
+}
+
+/* Color de los íconos */
+.services-section .bi {
+    color: #1d1d1f;
+}
+
+/* Títulos y textos */
+.services-section h3 {
+    color: #1d1d1f;
+}
+
+.services-section p {
+    line-height: 1.5;
+    max-width: 280px; /* Limitamos el ancho del texto para que se vea centrado y ordenado */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo del enlace (Link) */
+.custom-link {
+    color: #0066cc;
+    font-size: 14px;
+}
+
+.custom-link:hover {
+    text-decoration: underline !important;
+}
+/* Sección envío y contacto*/
