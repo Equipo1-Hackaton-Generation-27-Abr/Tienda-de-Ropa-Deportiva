@@ -381,10 +381,21 @@ body {
 }
 /* Galería de imágenes */
 .gallery-column {
-    display: flex;
-    gap: 20px;
+    background: var(--bg-white);
+    border-bottom: 1px solid #d2d2d7;
+    padding: 10px 0;
 }
-.thumbnails {
+
+.chapter-content {
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    display: flex;
+    justify-content: center;
+}
+.chapter-content::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+.chapter-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -403,14 +414,18 @@ body {
 #thumb-list img:hover {
     border-color: var(--accent-blue);
 }
+
 .main-image {
     flex-grow: 1;
     background: var(--bg-card-light);
     border-radius: 8px;
+    border-radius: 50%;
+    margin: 0 auto 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    font-size: 24px;
+    transition: transform 0.2s ease;
 }
 /* Columna de información */
 .headline-details {
@@ -424,7 +439,11 @@ body {
     color: var(--accent-blue);
     font-weight: 600;
     margin-bottom: 30px;
+.chapter-item:hover .icon-placeholder,
+.chapter-item:hover .icon-circle {
+    transform: scale(1.1);
 }
+
 .specs-list {
     list-style: none;
     padding: 20px 0;
@@ -500,62 +519,153 @@ body {
     .product-details-container { grid-template-columns: 1fr; padding: 20px; }
     .product-grid { grid-template-columns: repeat(2, 1fr); }
 
-    #detalle-imagen-principal {
-    transition: opacity 0.3s ease-in-out;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+    color: #777;
+    flex-grow: 1; /* Esto empuja el botón siempre al fondo de la card */
 }
 
-.thumbnails {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.thumb-arrow {
-    background: none;
+/* 7. El botón con tu variable de color */
+.btn-select {
+    background-color: var(--btn-select);
+    color: white;
     border: none;
-    font-size: 2rem;
-    color: var(--btn-select);
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     cursor: pointer;
-    line-height: 1;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: auto; /* Asegura alineación aunque los textos varíen */
 }
 
-.thumb-arrow:hover {
-    color: var(--text-header);
-}
-/* --- ESTILOS EXCLUSIVOS PARA SHOE-DARK --- */
-
-#page-details .product-details-container {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
-    background: var(--bg-white);
-    padding: 40px;
-    margin-top: 20px;
+.btn-select:hover { 
+    background-color: #7a9eb0;
+    transform: scale(1.02); /* Pequeño feedback al pasar sobre el botón */
 }
 
-#page-details .gallery-column {
+/* --- FOOTER AURA (AXEL) --- */
+.footer-aura {
+    background-color: var(--bg-white);
+    border-top: 1px solid #d2d2d7;
+    padding: 0px 20px;
+    text-align: center;
+}
+
+.copyright-text {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 991.98px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .navbar-nav { background-color: white; padding: 20px; text-align: center; }
+}
+
+@media (max-width: 600px) {
+    .product-grid { grid-template-columns: 1fr; }
+    .headline-xl { font-size: 38px; }
+}
+
+/*video centro*/
+.hero-video-container {
+    position: relative; 
+    width: 100%;
+    max-width: 1000px; 
+    margin: 40px auto; 
+    padding: 0 15px;
+}
+
+.hero-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    object-fit: cover;
+}
+
+.video-overlay-text {
+    position: absolute;
+    bottom: 6%; 
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    width: 80%;
+    padding: 15px;
+    backdrop-filter: none;
+}
+
+.video-overlay-text h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -1px; 
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.video-overlay-text p {
+    font-size: 2.1rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.links {
     display: flex;
-    flex-direction: row; /* Miniaturas a la izquierda de la imagen grande */
+    justify-content: center;
     gap: 20px;
 }
 
-#page-details .thumbnails {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 85px;
+.btn-link {
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
-#page-details .main-image {
-    flex-grow: 1;
-    background: var(--bg-card-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+.btn-link:hover {
+    color: #004499;
+    text-decoration: underline;
 }
 
-/* Si quieres cambiar algo del body solo en esta página */
-#page-details {
-    background-color: #ffffff; /* Por ejemplo, fondo blanco puro solo aquí */
+/* Sección envío y contacto */
+
+/* Color gris claro de fondo para la sección*/
+.services-section {
+    background-color: var(--bg-main);
 }
+
+/* Color de los íconos */
+.services-section .bi {
+    color: #1d1d1f;
+}
+
+/* Títulos y textos */
+.services-section h3 {
+    color: #1d1d1f;
+}
+
+.services-section p {
+    line-height: 1.5;
+    max-width: 280px; /* Limitamos el ancho del texto para que se vea centrado y ordenado */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo del enlace (Link) */
+.custom-link {
+    color: #0066cc;
+    font-size: 14px;
+}
+
+.custom-link:hover {
+    text-decoration: underline !important;
+}
+/* Sección envío y contacto*/
