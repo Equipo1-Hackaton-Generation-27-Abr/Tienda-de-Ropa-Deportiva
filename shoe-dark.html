@@ -10,28 +10,47 @@
 </head>
 
 <body>
+    <!-- NAV BAR AXEL -->
     <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
         <div class="container px-4">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <a class="navbar-brand d-flex align-items-center" href="./index.html">
+                <img src="./Stock/logo.png" class="nav-logo" alt="Logo VORA">
                 <span class="logo-text">VORA</span>
             </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navPrincipal" aria-controls="navPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
             <div class="collapse navbar-collapse" id="navPrincipal">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link mx-2" href="#">Mujer</a></li>
-                    <li class="nav-item"><a class="nav-link mx-2" href="#">Hombre</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="#">Mujer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="#">Hombre</a>
+                    </li>
+
                     <li class="nav-item ms-lg-3">
-                        <a class="nav-link px-2" href="#"><i class="bi bi-search"></i></a>
+                        <a class="nav-link px-2" href="#" title="Buscar">
+                            <i class="bi bi-search"></i>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-2" href="#"><i class="bi bi-heart"></i></a>
+                        <a class="nav-link px-2" href="#" title="Favoritos">
+                            <i class="bi bi-heart"></i>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-2" href="#"><i class="bi bi-bag"></i></a>
+                        <a class="nav-link px-2" href="#" title="Carrito">
+                            <i class="bi bi-bag"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <!-- NAVBAR AXEL -->
 
     <div style="height: 100px;"></div>
 
@@ -74,15 +93,17 @@
         </div>
     </main>
 
-    <footer class="footer-aura mt-5">
+    <!-- FOOTER AXEL -->
+    <footer class="footer-aura mt-2">
         <div class="container py-4">
             <div class="row">
-                <div class="col-12 text-start">
-                    <p class="mb-0 copyright-text">Copyright VORA 2026. All Rights Reserved</p>
+                <div class="col-12 text-center">
+                    <p class="mb-0 copyright-text">© VORA 2026. Todos los derechos reservados.</p>
                 </div>
             </div>
         </div>
     </footer>
+    <!-- FOOTER AXEL -->
 
     <script src="detalles.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
