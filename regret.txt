@@ -160,17 +160,3 @@
 }
 
 .btn-select:hover { background-color: #7a9eb0; }
-   <main>
-        <section class="hero">
-            <div class="hero-text">
-                <h1 class="headline">Seamless Pro.</h1>
-                <p class="subhead">Diseñado para desaparecer en tu piel.</p>
-                <div class="cta-links">
-                    <a href="#">Más información ></a>
-                    <a href="#">Comprar ></a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1000" alt="Colección Vora">
-            </div>
-        </section>
