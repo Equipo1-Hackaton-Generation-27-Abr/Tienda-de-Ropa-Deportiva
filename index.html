@@ -17,6 +17,7 @@
     <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
         <div class="container px-4">
             <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="./Stock/logo.png" class="nav-logo" alt="Logo VORA">
                 <span class="logo-text">VORA</span>
             </a>
 
@@ -54,55 +55,47 @@
     <nav class="chapter-nav">
         <div class="chapter-content">
             <ul class="chapter-list">
-                <li class="chapter-item">
-                    <a href="#">
-                        <div class="icon-placeholder"></div>
-                        <span class="chapter-label">Tops</span>
+                <li class="chapter-item text-center">
+                    <a href="#" class="d-flex flex-column">
+                        <i class="bi-lightning-charge-fill fs-2 mb-1"></i>
+                        <span class="chapter-label">Run</span>
                     </a>
                 </li>
                 <li class="chapter-item">
-                    <a href="#">
-                        <div class="icon-placeholder"></div>
-                        <span class="chapter-label">Leggings</span>
+                    <a href="#" class="d-flex flex-column">
+                        <i class="bi-buildings-fill fs-2 mb-1"></i>
+                        <span class="chapter-label">Urban</span>
                     </a>
                 </li>
                 <li class="chapter-item">
-                    <a href="#">
-                        <div class="icon-placeholder"></div>
-                        <span class="chapter-label">Calzado</span>
+                    <a href="#" class="d-flex flex-column">
+                        <i class="bi-tree-fill fs-2 mb-1"></i>
+                        <span class="chapter-label">Outdoor</span>
                     </a>
                 </li>
                 <li class="chapter-item">
-                    <a href="#">
-                        <div class="icon-placeholder"></div>
-                        <span class="chapter-label">Sets</span>
-                        <span class="chapter-badge">Nuevo</span>
-                    </a>
-                </li>
-                <li class="chapter-item">
-                    <a href="#">
-                        <div class="icon-placeholder"></div>
-                        <span class="chapter-label">Accesorios</span>
+                    <a href="#" class="d-flex flex-column">
+                        <i class="bi-stars fs-2 mb-1"></i>
+                        <span class="chapter-label">Essentials</span>
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
+<!--Seccion Video-->
+<div class="hero-video-container">
+    <video autoplay muted loop playsinline preload="auto" class="hero-video">
+        <source src="Video/video.mp4" type="video/mp4">
+        Tu navegador no soporta video.
+    </video>
+    <div class="video-overlay-text">
+        <h1>Seamless Pro.</h1>
+        <p>Diseñado para desaparecer en tu piel.</p>
+        <a href="#" class="btn-link">Más información ></a>
+        <a href="#" class="btn-link">Comprar ></a>
+    </div>
+</div>
 
-    <main>
-        <section class="hero">
-            <div class="hero-text">
-                <h1 class="headline">Seamless Pro.</h1>
-                <p class="subhead">Diseñado para desaparecer en tu piel.</p>
-                <div class="cta-links">
-                    <a href="#">Más información ></a>
-                    <a href="#">Comprar ></a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1000" alt="Colección Vora">
-            </div>
-        </section>
 <!--regilla stock-->
     <section class="container my-5">
     <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
@@ -199,22 +192,37 @@
 
     </div>
     </section>
+        <!-- Sección envío y contacto -->
+        <section class="services-section py-5">
+            <div class="container">
+                <div class="row justify-content-center g-4">
+                    
+                    <div class="col-md-5">
+                        <div class="card h-100 bg-transparent border-0 text-center p-4">
+                            <div class="card-body">
+                                <i class="bi bi-truck fs-1 mb-3"></i>
+                                <h3 class="h5 fw-bold mb-3">Fast delivery or pickup</h3>
+                                <p class="text-secondary small mb-3">
+                                    Enjoy two-hour free delivery or easy pickup at any Vora Shop.
+                                </p>
+                                <a href="#" class="text-decoration-none custom-link">Learn more &gt;</a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="col-md-5">
+                        <div class="card h-100 bg-transparent border-0 text-center p-4">
+                            <div class="card-body">
+                                <i class="bi bi-chat-dots fs-1 mb-3"></i>
+                                <h3 class="h5 fw-bold mb-3">Get help buying</h3>
+                                <p class="text-secondary small mb-3">
+                                    Have a question? Call a Specialist or chat online.
+                                </p>
+                                <a href="#" class="text-decoration-none custom-link">Contact us &gt;</a>
+                            </div>
+                        </div>
+                    </div>
 
-
-        <section class="product-grid">
-            <div class="card card-dark">
-                <h2>Ultra-Lite Jacket</h2>
-                <p>Protección térmica. Peso pluma.</p>
-                <div class="cta-links">
-                    <a href="#">Ver más ></a>
-                </div>
-            </div>
-            <div class="card card-light">
-                <h2>Infinity Flow</h2>
-                <p>Tu mejor marca personal empieza aquí.</p>
-                <div class="cta-links">
-                    <a href="#">Comprar ></a>
                 </div>
             </div>
         </section>
@@ -231,15 +239,6 @@
         </div>
     </footer>
     <!-- FOOTER AXEL -->
-
-    <!-- Footer Original -->
-    <!--
-    <footer>
-        <div class="footer-content">
-            <p>Copyright © 2026 Aura Sport Inc. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-    -->
 
     <!-- Script bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
