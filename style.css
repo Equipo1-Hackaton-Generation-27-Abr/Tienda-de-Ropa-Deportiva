@@ -14,6 +14,7 @@
     --apple-link: #0066CC;
     --btn-blue: #0071E3;
     --btn-select: #8eb2c5;     /* Color azul suave Axel */
+    --accent-blue: #5a8ca5;    /* Azul acento para precios */
 }
 
 /* --- RESET & BASE --- */
@@ -25,10 +26,10 @@
 }
 
 body {
-    background-color: var(--bg-main); /* Fondo orgánico unificado */
+    background-color: var(--bg-main);
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
     color: var(--text-header);
-    padding-top: 90px; /* Espacio para la navbar fija de Axel */
+    padding-top: 90px; 
     overflow-x: hidden;
 }
 
@@ -38,10 +39,8 @@ body {
     top: 0;
     width: 100%;
     height: 70px;
-     /*background-color: rgba(255, 255, 255, 0.8) !important; /* Blanco con transparencia */
+    background-color: rgba(255, 255, 255, 0.8) !important;
     backdrop-filter: saturate(180%) blur(20px);
-    border-bottom: none !important;
-    box-shadow: none !important;
     z-index: 9999;
     display: flex;
     align-items: center;
@@ -70,82 +69,66 @@ body {
     text-decoration: none;
 }
 
-.custom-navbar .nav-link:hover {
-    opacity: 0.6;
-}
-
-/* Iconos de la Navbar */
-.bi {
-    font-size: 1.1rem;
-    -webkit-text-stroke: 0.5px;
-}
-
-/* --- CHAPTER NAV (CARRUSEL) --- */
-.chapter-nav {
+/* --- SECCIÓN DETALLES DE PRODUCTO (NUEVO) --- */
+.product-details-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
     background: var(--bg-white);
-    border-bottom: 1px solid #d2d2d7;
-    padding: 10px 0;
+    padding: 40px;
+    border-radius: 2px; /* Estilo minimalista */
+    margin-top: 20px;
 }
 
-.chapter-content {
-    max-width: 100%;
-    overflow-x: auto;
-    scrollbar-width: none; /* Firefox */
+/* Galería Izquierda */
+.gallery-column {
     display: flex;
-    justify-content: center;
+    gap: 20px;
 }
 
-.chapter-content::-webkit-scrollbar { display: none; } /* Chrome/Safari */
-
-.chapter-list {
+.thumbnails {
     display: flex;
-    gap: 30px;
-    padding: 10px 20px;
-    list-style: none;
-    scroll-snap-type: x mandatory;
+    flex-direction: column;
+    gap: 12px;
+    width: 85px;
 }
 
-.chapter-item {
-    flex: 0 0 auto;
-    scroll-snap-align: center;
-    text-align: center;
-    width: 90px;
-}
-
-.chapter-item a { text-decoration: none; color: var(--text-header); }
-
-.icon-placeholder, .icon-circle {
-    width: 60px;
-    height: 60px;
+.thumbnails img {
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid transparent;
     background: var(--bg-card-light);
-    border-radius: 50%;
-    margin: 0 auto 8px;
+    transition: 0.3s ease;
+}
+
+.thumbnails img:hover {
+    border-color: var(--accent-blue);
+}
+
+.main-image {
+    flex-grow: 1;
+    background: var(--bg-card-light);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    transition: transform 0.2s ease;
+    padding: 20px;
 }
 
-.chapter-item:hover .icon-placeholder,
-.chapter-item:hover .icon-circle {
-    transform: scale(1.1);
+.main-image img {
+    max-width: 100%;
+    height: auto;
 }
 
-.chapter-label { font-size: 11px; font-weight: 400; }
-
-/* --- HERO --- */
-.hero {
-    padding: 80px 20px;
-    text-align: center;
-    background-color: var(--bg-main);
+/* Info Derecha */
+.info-column {
+    display: flex;
+    flex-direction: column;
 }
 
 .headline-xl { font-size: 56px; font-weight: 700; letter-spacing: -0.015em; }
 .subheadline { font-size: 24px; color: var(--text-body); margin: 10px 0 30px; }
 
 /* --- PRODUCT GRID & CARDS (STOCK DE TENIS) --- */
-/* 1. Mantenemos tu grid pero lo hacemos flexible */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -154,7 +137,6 @@ body {
     background-color: var(--bg-main);
 }
 
-/* 2. Tu card con el efecto de elevación intacto */
 .product-card {
     background-color: var(--bg-white);
     border: none;
@@ -171,10 +153,9 @@ body {
 
 .product-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); /* Sombra un poco más marcada para el hover */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); 
 }
 
-/* 3. El contenedor de la imagen */
 .product-image-wrapper {
     aspect-ratio: 1 / 1;
     display: flex;
@@ -184,19 +165,17 @@ body {
     background-color: #f9f9f9;
     border-radius: 4px;
     overflow: hidden;
-    position: relative; /* Por si decides usar el método absolute después */
+    position: relative; 
 }
 
-/* 4. LA CLAVE: La imagen con transición de opacidad para el JS */
 .product-img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transition: opacity 0.3s ease-in-out; /* Esta línea hace que el cambio de JS sea suave */
+    transition: opacity 0.3s ease-in-out; 
     will-change: opacity;
 }
 
-/* 5. Textos y precios */
 .product-title { 
     font-size: 1.1rem; 
     font-weight: 500; 
@@ -211,17 +190,15 @@ body {
     margin-bottom: 15px; 
 }
 
-/* 6. Lista de especificaciones (Opcional por si la usas) */
 .product-specs {
     list-style: none;
     padding: 0;
     margin-bottom: 20px;
     font-size: 0.85rem;
     color: #777;
-    flex-grow: 1; /* Esto empuja el botón siempre al fondo de la card */
+    flex-grow: 1; 
 }
 
-/* 7. El botón con tu variable de color */
 .btn-select {
     background-color: var(--btn-select);
     color: white;
@@ -233,12 +210,12 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: auto; /* Asegura alineación aunque los textos varíen */
+    margin-top: auto; 
 }
 
 .btn-select:hover { 
     background-color: #7a9eb0;
-    transform: scale(1.02); /* Pequeño feedback al pasar sobre el botón */
+    transform: scale(1.02); 
 }
 
 /* --- FOOTER AURA (AXEL) --- */
@@ -249,82 +226,77 @@ body {
     text-align: center;
 }
 
-.copyright-text {
-    color: var(--text-muted);
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0.01em;
-}
-
-/* --- RESPONSIVIDAD --- */
-@media (max-width: 991.98px) {
-    .product-grid { grid-template-columns: repeat(2, 1fr); }
-    .navbar-nav { background-color: white; padding: 20px; text-align: center; }
-}
-
-@media (max-width: 600px) {
-    .product-grid { grid-template-columns: 1fr; }
-    .headline-xl { font-size: 38px; }
-}
-
-/*video centro*/
-.hero-video-container {
-    position: relative; /* 🔥 clave para overlay */
-    width: 100%;
-    max-width: 1000px; 
-    margin: 40px auto; 
-    padding: 0 15px;
-}
-
-.hero-video {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 12px; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-    object-fit: cover;
-}
-
-/* 🔥 overlay */
-.video-overlay-text {
-    position: absolute;
-    bottom: 6%; 
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: white;
-    width: 80%;
-    padding: 15px;
-    backdrop-filter: none;
-}
-
-.video-overlay-text h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -1px; 
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-.video-overlay-text p {
-    font-size: 2.1rem;
-    color: #ffffff;
-    margin-bottom: 20px;
-}
-
-.links {
+.purchase-actions {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.btn-link {
-    font-size: 1.1rem;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
+.quantity-selector {
+    display: flex;
+    border: 1px solid #d2d2d7;
+    width: fit-content;
 }
+
+.btn-qty {
+    background: none;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.btn-add-cart {
+    background-color: var(--text-header);
+    color: var(--bg-white);
+    border: none;
+    padding: 18px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-add-cart:hover {
+    background-color: var(--text-body);
+}
+
+/* --- ELEMENTOS DEL INDEX (CHAPTERS, HERO, GRID) --- */
+.chapter-nav { background: var(--bg-white); border-bottom: 1px solid #d2d2d7; padding: 10px 0; }
+.chapter-content { display: flex; justify-content: center; overflow-x: auto; }
+.chapter-list { display: flex; gap: 30px; list-style: none; padding: 10px 20px; }
+.chapter-item { text-align: center; width: 90px; }
+.icon-placeholder { width: 60px; height: 60px; background: var(--bg-card-light); border-radius: 50%; margin: 0 auto 8px; }
+
+.hero { padding: 80px 20px; text-align: center; }
+.headline-xl { font-size: 56px; font-weight: 700; }
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    padding: 15px;
+}
+
+.product-card {
+    background-color: var(--bg-white);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover { transform: translateY(-5px); }
+
+/* --- FOOTER --- */
+.footer-aura {
+    background-color: var(--bg-white);
+    border-top: 1px solid #d2d2d7;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.copyright-text { color: var(--text-muted); font-size: 13px; }
 
 .btn-link:hover {
     color: #004499;
