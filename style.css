@@ -245,7 +245,7 @@ body {
 .footer-aura {
     background-color: var(--bg-white);
     border-top: 1px solid #d2d2d7;
-    padding: 40px 20px;
+    padding: 0px 20px;
     text-align: center;
 }
 
